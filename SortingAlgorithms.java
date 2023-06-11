@@ -24,11 +24,15 @@ public class SortingAlgorithms {
         // TODO: Implement this sorting algorithm here.
 
     }
-
-    /*
+     /*
      * Define AT LEAST ONE more sorting algorithm here, apart from the
      * ones given above. Make sure that the method accepts an array of
      * records
      */
+
+    public void countingSort(Record[] arr){
+
+    }
+
 
 }
