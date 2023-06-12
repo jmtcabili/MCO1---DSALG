@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,15 +19,29 @@ public class Main {
         //Initial declaration
         FileReader fp = new FileReader();
         SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
+        Scanner sc = new Scanner(System.in);
 
         //File to be used (change path)
         Record[] Record = fp.readFile("\"C:\\Users\\Johan\\Documents\\JOHAN\\DLSU - College\\3rd Semester AY 2022-2023\\CCDSALG\\MCO1---DSALG\\data\\almostsorted.txt\"");
 
-        int choice = 0; 
-        while (choice == 0){
-            System.out.println("Pick algorithm:");
-            System.out.println("1. ");
+        int choice = -1; 
+        while (choice != 0){
+            System.out.println("Pick option:");
+            System.out.println("[1] Insertion Sort\n[2] Selection Sort");
+            System.out.println("[3] Merge Sort\n[4] Counting Sort\n[0] Exit");
+            do
+                choice = sc.nextInt();
+            while (choice < 0 || choice > 5);
+            
+            
+            switch(choice){
+                case 1: 
+
+            }
+
+
         }
+        sc.close();
 
 
 
