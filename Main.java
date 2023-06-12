@@ -18,21 +18,44 @@ public class Main {
         //Test sorting
         //Initial declaration
         FileReader fp = new FileReader();
-        SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
+        SortingAlgorithms algorithm = new SortingAlgorithms();
         Scanner sc = new Scanner(System.in);
 
-        //File to be used (change path)
-        Record[] Record = fp.readFile("\"C:\\Users\\Johan\\Documents\\JOHAN\\DLSU - College\\3rd Semester AY 2022-2023\\CCDSALG\\MCO1---DSALG\\data\\almostsorted.txt\"");
-
+    
         int choice = -1; 
         while (choice != 0){
             System.out.println("Pick option:");
             System.out.println("[1] Insertion Sort\n[2] Selection Sort");
             System.out.println("[3] Merge Sort\n[4] Counting Sort\n[0] Exit");
-            do
+
+            do{
                 choice = sc.nextInt();
-            while (choice < 0 || choice > 5);
+                if (choice < 0 || choice > 5)
+                    System.out.println("Please enter a valid option!\n");
+            } while (choice < 0 || choice > 5);
             
+            //set record
+            for (int i = 1; i <= 7; i++){
+                Record[] record = switch (i) {
+                    case 1 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/almostsorted.txt");
+                    case 2 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/random100.txt");
+                    case 3 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/random25000.txt");
+                    case 4 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/random50000.txt");
+                    case 5 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/random75000.txt");
+                    case 6 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/random100000.txt");
+                    case 7 -> fp.readFile("C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG/data/totallyreversed.txt");
+                    default -> null;
+                }
+                long startTime = System.currentTimeMillis();
+                switch(choice){
+                    case 1: algorithm.insertionSort(record, i);
+                }
+                long endTime = System.currentTimeMillis();
+                long executionTime = endTime - startTime;
+                System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + record.length);
+            
+            }
+
             
             switch(choice){
                 case 1: 
@@ -44,10 +67,6 @@ public class Main {
         sc.close();
 
 
-
-        //Type of sorting algorithm + valid parameters
-        sortingAlgorithms.insertionSort(Record, Record.length);
-        
         //Print
         for (int i = 0; i < Record.length; i++) {
             System.out.println(Record[i].getIdNumber() + Record[i].getName());
