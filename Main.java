@@ -19,7 +19,15 @@ public class Main {
         SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
         //File to be used (change path)
-        Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
+        Record[] Record = fp.readFile("\"C:\\Users\\Johan\\Documents\\JOHAN\\DLSU - College\\3rd Semester AY 2022-2023\\CCDSALG\\MCO1---DSALG\\data\\almostsorted.txt\"");
+
+        int choice = 0; 
+        while (choice == 0){
+            System.out.println("Pick algorithm:");
+            System.out.println("1. ");
+        }
+
+
 
         //Type of sorting algorithm + valid parameters
         sortingAlgorithms.insertionSort(Record, Record.length);
