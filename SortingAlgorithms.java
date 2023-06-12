@@ -1,7 +1,6 @@
 /* This file contains implementations of sorting algorithms.
  * You are NOT allowed to modify any of the given method headers.
  */
-
 public class SortingAlgorithms {
 
     /*
@@ -29,10 +28,8 @@ public class SortingAlgorithms {
      * ones given above. Make sure that the method accepts an array of
      * records
      */
-
-    public void countingSort(Record[] arr){
-
-    }
-
+    public void countingSort(Record[] arr, int n){
+        
+        Record[] arrSorted = new Record[n+1];
 
 }
