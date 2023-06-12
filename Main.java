@@ -19,16 +19,14 @@ public class Main {
         SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
         //File to be used (change path)
-        Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
+        Record[] Record = fp.readFile("C:\\Users\\Johan\\Documents\\JOHAN\\DLSU - College\\3rd Semester AY 2022-2023\\CCDSALG\\MCO1---DSALG\\data\\almostsorted.txt");
 
         //Type of sorting algorithm + valid parameters
-        sortingAlgorithms.insertionSort(Record, Record.length);
-        
-        //Print
-        for (int i = 0; i < Record.length; i++) {
-            System.out.println(Record[i].getIdNumber() + Record[i].getName());
+        sortingAlgorithms.countingSort(Record, Record.length);
+        for(int i = 0; i < 10000; i++)
+            System.out.println(Record[i].getIdNumber() + "  " + Record[i].getName());
         }
-    }
+    
         /* 
         De-comment once sorting algorithms are finished
 
