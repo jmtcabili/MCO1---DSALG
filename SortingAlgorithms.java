@@ -37,11 +37,11 @@ public class SortingAlgorithms {
         int i;
         int max = 0;
         for (i = 1; i < n; i++)
-            if (arr[i].getIdNumber() > arr[max].getIdNumber())
-                max = i;
+            if (arr[i].getIdNumber() > max)
+                max = arr[i].getIdNumber();
 
         //counting occurences of id numbers
-        int[] arrOccurence = new int[arr[max].getIdNumber()+1];
+        int[] arrOccurence = new int[max+1];
         for (i = 0; i < n; ++i)
             arrOccurence[arr[i].getIdNumber()]+=1;
 
