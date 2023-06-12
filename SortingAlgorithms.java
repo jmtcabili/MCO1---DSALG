@@ -32,4 +32,35 @@ public class SortingAlgorithms {
         
         Record[] arrSorted = new Record[n+1];
 
+        //finding largest element
+        int i;
+        int max = 0;
+        for (i = 1; i < n; i++)
+            if (arr[i].getIdNumber() > arr[max].getIdNumber())
+                max = i;
+
+        //counting occurences of id numbers
+        int[] arrOccurence = new int[arr[max].getIdNumber()+1];
+        for (i = 0; i < n; i++)
+            arrOccurence[arr[i].getIdNumber()]+=1;
+
+        //setting up cumulative count
+        for (i = 1; i < max; i++)
+            arrOccurence[i] += arrOccurence[i-1];
+        
+        for (i = n-1; i >= 0; i++){
+            arrSorted[arrOccurence[arr[i].getIdNumber()]-1] = arr[i];
+            arrOccurence[arr[i].getIdNumber()]--; 
+        }
+        for(i = 0; i < n; i++){
+            arr[i] = arrSorted[i];
+        }
+        
+        
+
+
+
+
+        
+    }
 }
