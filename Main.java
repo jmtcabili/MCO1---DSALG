@@ -1,8 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-
-        /*
-        De-comment once sorting algorithms are finished 
         System.out.println("Insertion Sort:");
         insertionRuntime();
         System.out.println("\nSelection Sort");
@@ -11,49 +8,21 @@ public class Main {
         mergeRuntime();
         System.out.println("\nCounting Sort");
         countingRuntime();
-        */
-
-        //Test sorting
-        //Initial declaration
-        FileReader fp = new FileReader();
-        SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
-
-        //File to be used (change path)
-        Record[] Record = fp.readFile("C:\\Users\\Johan\\Documents\\JOHAN\\DLSU - College\\3rd Semester AY 2022-2023\\CCDSALG\\MCO1---DSALG\\data\\almostsorted.txt");
-
-        //Type of sorting algorithm + valid parameters
-        sortingAlgorithms.countingSort(Record, Record.length);
-        for(int i = 0; i < 10000; i++)
-            System.out.println(Record[i].getIdNumber() + "  " + Record[i].getName());
-        }
+    }
     
-        /* 
-        De-comment once sorting algorithms are finished
-
-        private static void insertionRuntime() {
+        private static void insertionRuntime() { 
             FileReader fp = new FileReader();
             SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
-            //almost sorted
-            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
-            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            //Random 100
+            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
+            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
             String fn = f.getName();
 
             long startTime = System.currentTimeMillis();
             sortingAlgorithms.insertionSort(Record, Record.length);
             long endTime = System.currentTimeMillis();
             long executionTime = endTime - startTime;
-            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
-
-            //Random 100
-            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            fn = f.getName();
-
-            startTime = System.currentTimeMillis();
-            sortingAlgorithms.insertionSort(Record, Record.length);
-            endTime = System.currentTimeMillis();
-            executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 25,000
@@ -87,7 +56,7 @@ public class Main {
             sortingAlgorithms.insertionSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
-            System.out.println("Runtime of " + fn + " in (MS): " + executionTime + ". Size of File: " + Record.length);
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 100,000
             f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100000.txt");
@@ -100,6 +69,16 @@ public class Main {
             executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
+            //almost sorted
+            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
+            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            fn = f.getName();
+
+            startTime = System.currentTimeMillis();
+            sortingAlgorithms.insertionSort(Record, Record.length);
+            endTime = System.currentTimeMillis();
+            executionTime = endTime - startTime;
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
             //totally reversed
             f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\totallyreversed.txt");
             Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\totallyreversed.txt");
@@ -112,31 +91,20 @@ public class Main {
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
             
     }
-
+    
         private static void selectionRuntime() {
             FileReader fp = new FileReader();
             SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
-            //almost sorted
-            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
-            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            //Random 100
+            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
+            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
             String fn = f.getName();
 
             long startTime = System.currentTimeMillis();
             sortingAlgorithms.selectionSort(Record, Record.length);
             long endTime = System.currentTimeMillis();
             long executionTime = endTime - startTime;
-            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
-
-            //Random 100
-            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            fn = f.getName();
-
-            startTime = System.currentTimeMillis();
-            sortingAlgorithms.selectionSort(Record, Record.length);
-            endTime = System.currentTimeMillis();
-            executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 25,000
@@ -170,11 +138,22 @@ public class Main {
             sortingAlgorithms.selectionSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
-            System.out.println("Runtime of " + fn + " in (MS): " + executionTime + ". Size of File: " + Record.length);
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 100,000
             f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100000.txt");
             Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100000.txt");
+            fn = f.getName();
+
+            startTime = System.currentTimeMillis();
+            sortingAlgorithms.selectionSort(Record, Record.length);
+            endTime = System.currentTimeMillis();
+            executionTime = endTime - startTime;
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
+
+            //almost sorted
+            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
+            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
             fn = f.getName();
 
             startTime = System.currentTimeMillis();
@@ -200,26 +179,15 @@ public class Main {
             FileReader fp = new FileReader();
             SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
-            //almost sorted
-            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
-            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            //Random 100
+            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
+            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
             String fn = f.getName();
 
             long startTime = System.currentTimeMillis();
             sortingAlgorithms.mergeSort(Record, 0, Record.length - 1);
             long endTime = System.currentTimeMillis();
             long executionTime = endTime - startTime;
-            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
-
-            //Random 100
-            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            fn = f.getName();
-
-            startTime = System.currentTimeMillis();
-            sortingAlgorithms.mergeSort(Record, 0, Record.length - 1);
-            endTime = System.currentTimeMillis();
-            executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 25,000
@@ -253,7 +221,7 @@ public class Main {
             sortingAlgorithms.mergeSort(Record, 0, Record.length - 1);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
-            System.out.println("Runtime of " + fn + " in (MS): " + executionTime + ". Size of File: " + Record.length);
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 100,000
             f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100000.txt");
@@ -266,6 +234,17 @@ public class Main {
             executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
+            //almost sorted
+            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
+            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            fn = f.getName();
+
+            startTime = System.currentTimeMillis();
+            sortingAlgorithms.mergeSort(Record, 0, Record.length - 1);
+            endTime = System.currentTimeMillis();
+            executionTime = endTime - startTime;
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
+            
             //totally reversed
             f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\totallyreversed.txt");
             Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\totallyreversed.txt");
@@ -283,26 +262,15 @@ public class Main {
             FileReader fp = new FileReader();
             SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
-            //almost sorted
-            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
-            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            //Random 100
+            File f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
+            Record[] Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
             String fn = f.getName();
 
             long startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
+            sortingAlgorithms.countingSort(Record, Record.length);
             long endTime = System.currentTimeMillis();
             long executionTime = endTime - startTime;
-            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
-
-            //Random 100
-            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100.txt");
-            fn = f.getName();
-
-            startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
-            endTime = System.currentTimeMillis();
-            executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 25,000
@@ -311,7 +279,7 @@ public class Main {
             fn = f.getName();
 
             startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
+            sortingAlgorithms.countingSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
@@ -322,7 +290,7 @@ public class Main {
             fn = f.getName();
 
             startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
+            sortingAlgorithms.countingSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
@@ -333,10 +301,10 @@ public class Main {
             fn = f.getName();
 
             startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
+            sortingAlgorithms.countingSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
-            System.out.println("Runtime of " + fn + " in (MS): " + executionTime + ". Size of File: " + Record.length);
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
 
             //Random 100,000
             f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\random100000.txt");
@@ -344,7 +312,18 @@ public class Main {
             fn = f.getName();
 
             startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
+            sortingAlgorithms.countingSort(Record, Record.length);
+            endTime = System.currentTimeMillis();
+            executionTime = endTime - startTime;
+            System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
+
+            //almost sorted
+            f = new File("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");  
+            Record = fp.readFile("C:\\Personal\\College\\Codes\\CCDSALG\\MCO1\\almostsorted.txt");
+            fn = f.getName();
+
+            startTime = System.currentTimeMillis();
+            sortingAlgorithms.countingSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
@@ -355,13 +334,13 @@ public class Main {
             fn = f.getName();
 
             startTime = System.currentTimeMillis();
-            sortingAlgorithms.countingSort(Record);
+            sortingAlgorithms.countingSort(Record, Record.length);
             endTime = System.currentTimeMillis();
             executionTime = endTime - startTime;
             System.out.println("Runtime of \"" + fn + "\" in (MS): " + executionTime + ". Size of File: " + Record.length);
         }
         
-        */
+    
     
 }
 
