@@ -35,15 +35,15 @@ public class Main {
                 for (int i = 1; i <= 7; i++){
                     Record[] record = null; 
                     //change depending kung saan nakastore yung local repo 
-                    folderLoc = "C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/";
+                    folderLoc = "C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG";
                     fileToSort = switch (i) {
-                        case 1 -> "MCO1---DSALG/data/almostsorted.txt";
-                        case 2 -> "MCO1---DSALG/data/random100.txt";
-                        case 3 -> "MCO1---DSALG/data/random25000.txt";
-                        case 4 -> "MCO1---DSALG/data/random50000.txt";
-                        case 5 -> "MCO1---DSALG/data/random75000.txt";
-                        case 6 -> "MCO1---DSALG/data/random100000.txt";
-                        case 7 -> "MCO1---DSALG/data/totallyreversed.txt";
+                        case 1 -> "/data/almostsorted.txt";
+                        case 2 -> "/data/random100.txt";
+                        case 3 -> "/data/random25000.txt";
+                        case 4 -> "/data/random50000.txt";
+                        case 5 -> "/data/random75000.txt";
+                        case 6 -> "/data/random100000.txt";
+                        case 7 -> "/data/totallyreversed.txt";
                         default -> null;
                     };
                     record = fp.readFile(folderLoc+fileToSort);
@@ -78,7 +78,7 @@ public class Main {
                 
                 }
             }
-
+            System.out.println("");
         }
         sc.close();
 
