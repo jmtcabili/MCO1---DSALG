@@ -64,13 +64,6 @@ public class SortingAlgorithms {
         }
         for(i = 0; i < n; i++){
             arr[i] = arrSorted[i];
-        }
-        
-        
-
-
-
-
-        
+        }       
     }
 }
