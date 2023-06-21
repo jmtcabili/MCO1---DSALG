@@ -50,12 +50,6 @@ public class Main {
                     record = fp.readFile(folderLoc+fileToSort);
                     System.out.print("(" + record.length + ") ");
                     
-                    /* Plug this inside one of the cases below to test if ur algo works with a certain file
-                    *  if (i == 1){ //change i depending on file you wanna test
-                            for(int j = 0; j < record.length; j++)
-                                System.out.println(record[j].getIdNumber());
-                        }
-                    */
                     switch(choice){
                         case 1: 
                             startTime = System.currentTimeMillis();
