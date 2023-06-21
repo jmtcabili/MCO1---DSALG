@@ -82,12 +82,7 @@ public class SortingAlgorithms {
             merge(arr, p, q, r);
         }
     }
-<<<<<<< HEAD
-     /*
-=======
-    
     /*
->>>>>>> d4552616bf82b311586b5e10dd69800ee7174150
      * Define AT LEAST ONE more sorting algorithm here, apart from the
      * ones given above. Make sure that the method accepts an array of
      * records
