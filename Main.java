@@ -38,6 +38,7 @@ public class Main {
                 for (int i = 1; i <= 7; i++){
                     Record[] record = null; 
                     isSorted = true; 
+                    int j = 0;
                    //change depending kung saan nakastore yung local repo 
                     folderLoc = "C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG";
                     fileToSort = switch (i) {
@@ -88,9 +89,10 @@ public class Main {
                     }
 
 
-                    for (int k = 0; k < record.length-1; k++){
-                        if (record[k].getIdNumber() > record[k+1].getIdNumber())
+                    while (j < record.length-1 && isSorted){
+                        if (record[j].getIdNumber() > record[j+1].getIdNumber())
                             isSorted = false;
+                        j++;
                     }
 
                     if (isSorted == true){
