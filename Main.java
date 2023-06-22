@@ -1,6 +1,6 @@
 import java.io.FileWriter;
 import java.util.Scanner;
-import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +16,8 @@ public class Main {
 
         long startTime = 0; 
         long endTime = 0; 
+
+        boolean isSorted; 
 
     
         int choice = -1; 
@@ -35,6 +37,7 @@ public class Main {
             {
                 for (int i = 1; i <= 7; i++){
                     Record[] record = null; 
+                    isSorted = true; 
                    //change depending kung saan nakastore yung local repo 
                     folderLoc = "C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG";
                     fileToSort = switch (i) {
@@ -89,10 +92,20 @@ public class Main {
                         // TODO: handle exception
                         e.printStackTrace();
                     }
-                    System.out.println(record[record.length-1].getIdNumber() + " " + record[record.length-1].getName());
-                    long executionTime = endTime - startTime;
-                    System.out.println(fileToSort.substring(6) + " : " + executionTime + "(ms)\n");
-                    
+
+
+                    for (int k = 0; k < record.length-1; k++){
+                        if (record[k].getIdNumber() > record[k+1].getIdNumber())
+                            isSorted = false;
+                    }
+
+                    if (isSorted == true){
+                        System.out.println(record[record.length-1].getIdNumber() + " " + record[record.length-1].getName());
+                        long executionTime = endTime - startTime;
+                        System.out.println(fileToSort.substring(6) + " : " + executionTime + "(ms)\n");
+                    }else{
+                        System.out.println("Not sorted");
+                    }
                 
                 }
             }
