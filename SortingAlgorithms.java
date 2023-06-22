@@ -24,7 +24,24 @@ public class SortingAlgorithms {
     }
 
     public void selectionSort(Record[] arr, int n) {
-            
+        
+        int j,k, minIndex;
+        Record temp;
+
+        for (j = 0; j < n-1 ; j++){
+            minIndex = j;
+            for (k = j+ 1; k < n; k++){ 
+                if(arr[minIndex].getIdNumber() > arr[k].getIdNumber())
+                    minIndex = k;
+            }
+
+            if (minIndex != j){
+                temp = arr[j];
+                arr[j] = arr[minIndex];
+                arr[minIndex] = temp;
+
+            }
+        }
 
     }
     public void merge(Record[] arr, int p, int q, int r) {
