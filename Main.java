@@ -35,7 +35,7 @@ public class Main {
             //set record
             if (choice != 0)
             {
-                for (int i = 1; i <= 7; i++){
+                for (int i = 1; i <= 8; i++){
                     Record[] record = null; 
                     isSorted = true; 
                     int j = 0;
@@ -49,10 +49,10 @@ public class Main {
                         case 5 -> "/data/random75000.txt";
                         case 6 -> "/data/random100000.txt";
                         case 7 -> "/data/totallyreversed.txt";
+                        case 8 -> "/data/test.txt";
                         default -> null;
                     };
                     record = fp.readFile(folderLoc+fileToSort);
-                    System.out.print("(" + record.length + ") ");
                     
                     switch(choice){
                         case 1: 
