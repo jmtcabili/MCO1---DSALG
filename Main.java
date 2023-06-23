@@ -39,7 +39,7 @@ public class Main {
                     Record[] record = null; 
                     isSorted = true; 
                     int j = 0;
-                   //change depending kung saan nakastore yung local repo 
+                    
                     folderLoc = "C:/Users/Johan/Documents/JOHAN/DLSU - College/3rd Semester AY 2022-2023/CCDSALG/MCO1---DSALG";
                     fileToSort = switch (i) {
                         case 1 -> "/data/almostsorted.txt";
@@ -100,7 +100,7 @@ public class Main {
                         long executionTime = endTime - startTime;
                         System.out.println(fileToSort.substring(6) + " : " + executionTime + "(ms)\n");
                     }else{
-                        System.out.println("Not sorted");
+                        System.out.println(fileToSort.substring(6) + ": Not sorted");
                     }
                 
                 }
