@@ -46,7 +46,7 @@ public class SortingAlgorithms {
     }
     public void merge(Record[] arr, int p, int q, int r) {
         int sizeL = q - p + 1, 
-            sizeR = r - q + 1;
+            sizeR = r - q;
         Record[] arrL = new Record[sizeL];
         Record[] arrR = new Record[sizeR];
 

@@ -67,7 +67,7 @@ public class Main {
                             break;
                         case 3: 
                             startTime = System.currentTimeMillis();
-                            algorithm.mergeSort(record, 0, record.length-2);
+                            algorithm.mergeSort(record, 0, record.length-1);
                             endTime = System.currentTimeMillis();
                             break;
                         case 4: 
