@@ -25,26 +25,21 @@ public class SortingAlgorithms {
 
     public void selectionSort(Record[] arr, int n) {
         
-        int j,k, minIndex;
-        Record temp;
-
-        for (j = 0; j < n-1 ; j++){
-            minIndex = j;
-            for (k = j+ 1; k < n; k++){ 
+        for (int j = 0; j < n-1 ; j++){
+            int minIndex = j;
+            for (int k = j+ 1; k < n; k++){ 
                 if(arr[minIndex].getIdNumber() > arr[k].getIdNumber())
                     minIndex = k;
             }
-
             if (minIndex != j){
-                temp = arr[j];
+                Record temp = arr[j];
                 arr[j] = arr[minIndex];
                 arr[minIndex] = temp;
-
             }
         }
-
     }
-    public void merge(Record[] arr, int p, int q, int r) {
+
+    private void merge(Record[] arr, int p, int q, int r) {
         int sizeL = q - p + 1, 
             sizeR = r - q;
         Record[] arrL = new Record[sizeL];
@@ -86,7 +81,6 @@ public class SortingAlgorithms {
     }
 
     public void mergeSort(Record[] arr, int p, int r) {
-        // TODO: Implement this sorting algorithm here.
         int q;
         if(p < r){
             q = (p + r)/2; // gets the midpoint index of the array
@@ -106,7 +100,7 @@ public class SortingAlgorithms {
      */
     public void countingSort(Record[] arr, int n){
         
-        Record[] arrSorted = new Record[n+1];
+        Record[] arrSorted = new Record[n];
 
         //finding largest element
         int i;
@@ -114,6 +108,7 @@ public class SortingAlgorithms {
         for (i = 0; i < n; i++)
             if (arr[i].getIdNumber() > max)
                 max = arr[i].getIdNumber();
+
         //counting occurences of id numbers
         int[] arrOccurence = new int[max+1];
         for (i = 0; i < n; ++i)
@@ -123,10 +118,13 @@ public class SortingAlgorithms {
         for (i = 1; i <= max; i++)
             arrOccurence[i] += arrOccurence[i-1];
         
+        //use count of number as placement for that number in sorted array
         for (i = n-1; i >= 0; i--){
             arrSorted[arrOccurence[arr[i].getIdNumber()]-1] = arr[i];
             arrOccurence[arr[i].getIdNumber()]--; 
         }
+
+        //copy contents of sorted array to unsorted record
         for(i = 0; i < n; i++){
             arr[i] = arrSorted[i];
         }       
