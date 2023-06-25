@@ -9,6 +9,7 @@ public class SortingAlgorithms {
      * they will only be used in this class.
      */
 
+    
     public void insertionSort(Record[] arr, int n) {
 
         long ctr = 0; 
@@ -107,7 +108,7 @@ public class SortingAlgorithms {
             ctr += merge(arr, p, q, r);
         }
 
-        /*
+        //for printing empirical count
         int j = 0; boolean isSorted = true; 
         while (j < arr.length-1 && isSorted){
                         if (arr[j].getIdNumber() > arr[j+1].getIdNumber())
@@ -116,8 +117,8 @@ public class SortingAlgorithms {
                     }
         if (isSorted)
             System.out.println(ctr);
-        */
         
+    
         return ctr; 
     }
     /*
